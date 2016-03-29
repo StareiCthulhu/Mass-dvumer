@@ -1,4 +1,4 @@
-// ConsoleApplication20.cpp: определяет точку входа для консольного приложения.
+// ConsoleApplication20.cpp: Г®ГЇГ°ГҐГ¤ГҐГ«ГїГҐГІ ГІГ®Г·ГЄГі ГўГµГ®Г¤Г  Г¤Г«Гї ГЄГ®Г­Г±Г®Г«ГјГ­Г®ГЈГ® ГЇГ°ГЁГ«Г®Г¦ГҐГ­ГЁГї.
 //
 
 #include "stdafx.h"
@@ -6,7 +6,11 @@
 #include <iostream>
 #include <stdio.h>
 using namespace std;
+
+const int N = 5;
+
 void scanArr(int arr[][5], int m);
+void scanArr(int arr[][N], int m);  // Р·РґРµСЃСЊ РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РіР»РѕР±Р°Р»СЊРЅР°СЏ РєРѕРЅСЃС‚Р°РЅС‚Р°
 void arrPrint(int arr[][5], int m);
 int column(int arr[][5], int m);
 int line(int arr[][5], int m);
@@ -18,9 +22,9 @@ int main() {
 	int arr[m][n];
 	scanArr(arr, m);
 	arrPrint(arr, m);
-	printf_s("Количество столбцов с нулевыми элементами, равными нулю - %i", column(arr, m));
+	printf_s("ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГ®Г«ГЎГ¶Г®Гў Г± Г­ГіГ«ГҐГўГ»Г¬ГЁ ГЅГ«ГҐГ¬ГҐГ­ГІГ Г¬ГЁ, Г°Г ГўГ­Г»Г¬ГЁ Г­ГіГ«Гѕ - %i", column(arr, m));
 	printf_s("\n"); 
-	printf_s("Строка с самой длинной серией элементов - %i", line(arr, m));
+	printf_s("Г‘ГІГ°Г®ГЄГ  Г± Г±Г Г¬Г®Г© Г¤Г«ГЁГ­Г­Г®Г© Г±ГҐГ°ГЁГҐГ© ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў - %i", line(arr, m));
 	int z;
 	scanf_s("%i", &z);
 
@@ -31,7 +35,7 @@ void scanArr(int arr[][5], int m)
 {
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < 5; j++) {
-			printf_s("Введите %i %i элемент", i, j);
+			printf_s("Г‚ГўГҐГ¤ГЁГІГҐ %i %i ГЅГ«ГҐГ¬ГҐГ­ГІ", i, j);
 			scanf_s("%i", &arr[i][j]);
 		}
 			
@@ -45,6 +49,7 @@ void arrPrint(int arr[][5], int m) {
 		}
 		printf_s("\n");
 	}
+	printf_s("\n");
 }
 
 int column(int arr[][5], int m) {
